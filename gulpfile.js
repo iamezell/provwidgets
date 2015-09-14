@@ -7,11 +7,12 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var Server = require('karma').Server;
 
+
 gulp.task('jscs', function(){
 	return gulp.src('./src/js/app.js')
 	.pipe(jscs())
 	.pipe(jshint())
-	.pipe(jshint.reporter('jshint-stylish',{verbose:true}))
+	.pipe(jshint.reporter('jshint-stylish', {verbose:true}))
 	.pipe(jshint.reporter('fail'))
 });
 
